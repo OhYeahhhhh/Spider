@@ -1,0 +1,50 @@
+{%extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} JD-PHONES {% endblock %}
+
+{% block mainbody %}
+<div class="container">
+    <div class="row paddtop">
+        {% for phone in page_obj %}
+        <div class="col-md-3">
+            <div class="thumbnail" style="height:345px">
+                <img src="{% static phone.pFile %}" alt="..."  class="img-responsive">
+                <h4 style="color:red;">￥{{phone.pPrice}}</h4>
+                {{phone.pContent}}
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+    <nav aria-label="Page navigation" style="margin:0 auto;width:310px;">
+        <ul class="pagination pagination-lg">
+      
+          {% if  page_obj.previous_page_number > 0 %}
+          <li>
+            <a href="?page={{ page_obj.previous_page_number}}" aria-label="Previous">
+              <span aria-hidden="true">«</span>
+            </a>
+          </li>
+          {% endif %}
+      
+          {% for page_num in page_list %}
+                  {% if page_num == page_obj.number %}
+                      <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                  {% else %}
+                      <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                  {% endif %}
+          {% endfor %}
+      
+          {% if page_obj.has_next %}
+          <li>
+            <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">»</span>
+            </a>
+          </li>
+          {% endif %}  
+        </ul>
+      </nav>
+</div>
+
+{% endblock %}

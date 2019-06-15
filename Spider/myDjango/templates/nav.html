@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" role="navigation"> 
+    <div class="container-fluid"> 
+        <div class="navbar-header"> <a class="navbar-brand" href="#">爬虫</a> </div> 
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="{% url 'm_showDB' %}">豆瓣电影TOP-250</a></li>
+            <li class="dropdown">
+                <a href="{% url 'w_showDB' %}" class="dropdown-toggle" data-toggle="dropdown">天气预报
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'w_showDB' %}?city=台州">台州</a></li>
+                    <li><a href="{% url 'w_showDB' %}?city=温州">温州</a></li>
+                    <li><a href="{% url 'w_showDB' %}?city=宁波">宁波</a></li>
+                    <li><a href="{% url 'w_showDB' %}?city=杭州">杭州</a></li>
+                    <li><a href="{% url 'w_showDB' %}?city=绍兴">绍兴</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'p_showDB' %}">京东手机</a></li>
+            <li><a href="{% url 'pa_showDB' %}">淘宝书包</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right"> 
+            <li><a href="{% url 'info' %}"><span class="glyphicon glyphicon-user"></span> 关于</a></li>
+        </ul> 
+    </div> 
+</nav>

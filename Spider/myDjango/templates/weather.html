@@ -1,0 +1,22 @@
+﻿{%extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} 7-WEATHERS {% endblock %}
+
+{% block mainbody %}
+<div class="table-responsive">
+    <table class="table table-striped table-hover" style="width:800px;margin:10px auto;text-align: center;">
+        <tr><th colspan="4" style="text-align:center;"><h4>7-Weathers</h4></th></tr>
+        <tr><td>城市</td><td>日期</td><td>天气</td><td>温度</td></tr>
+        {% for weather in weather_list %}
+        <tr>
+            <td>{{weather.wCity}}</td>
+            <td>{{weather.wDate}}</td>
+            <td>{{weather.wWeather}}</td>
+            <td>{{weather.wTemp}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

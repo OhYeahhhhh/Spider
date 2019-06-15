@@ -1,0 +1,16 @@
+{%extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} PERSONAL IMFORMATION {% endblock %}
+
+{% block mainbody %}
+<div class="table-responsive" style="width:500px;margin:10px auto;text-align: center;">
+    <table class="table table-striped table-hover">
+        <tr><th colspan="4" style="text-align:center;"><h5>Personal Imformation</h5></th></tr>
+        <tr><td>姓名:</td><td>{{sname}}</td></tr>
+        <tr><td>学号:</td><td>{{sno}}</td></tr>
+        <tr><td>班级:</td><td>{{sclass}}</td></tr>
+    </table>
+</div>
+{% endblock %}

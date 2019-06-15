@@ -1,0 +1,21 @@
+{%extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} TOP250-MOVIES {% endblock %}
+
+{% block mainbody %}
+<div class="table-responsive" style="width:600px;margin:10px auto;text-align: center;">
+<table class="table table-striped table-hover">
+    <tr><th colspan="4" style="text-align:center;"><h4>TAOPBAO-Packages</h4></th></tr>
+    <tr><td>价格</td><td>标题</td></tr>
+    {% for package in package_list %}
+    <tr>
+        <td>￥{{package.pPrice}}</td>
+        <td>{{package.pTitle}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}
